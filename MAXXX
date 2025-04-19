@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You ❤️</title>
+  <style>
+    :root {
+      --main-bg: #fff0f5;
+      --text-color: #3a3a3a;
+      --accent-color: #ffb6c1;
+      --hover-color: #ffc0cb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #ffe4e1, var(--main-bg));
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      max-width: 600px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .button-container {
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    button {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      background-color: var(--accent-color);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: var(--hover-color);
+    }
+
+    .message-box {
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      color: #d6336c;
+      display: none;
+    }
+
+    .footer {
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    .secret {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      font-size: 0.8rem;
+      color: transparent;
+      cursor: pointer;
+    }
+    .secret:hover {
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hey You 🌹</h1>
+    <p>Just wanted to tell you how special you are. This page is a little something I made just for you — a small reflection of how you light up my world.</p>
+  </header>
+
+  <section class="gallery">
+    <img src="https://source.unsplash.com/300x200/?romantic,flowers" alt="Romantic Flower" />
+    <img src="https://source.unsplash.com/301x200/?sunset,love" alt="Sunset Love" />
+    <img src="https://source.unsplash.com/302x200/?heart,nature" alt="Heart in Nature" />
+    <img src="https://source.unsplash.com/303x200/?stars,night" alt="Starry Night" />
+  </section>
+
+  <div class="button-container">
+    <button onclick="showMessage()">Click Me 💌</button>
+    <div class="message-box" id="surpriseMessage">You're honestly the most amazing person I've ever met. 💖</div>
+  </div>
+
+  <div class="footer">© 2025 Made with care just for you</div>
+
+  <div class="secret" onclick="revealSecret()">.</div>
+
+  <script>
+    // Handles button click for heartfelt message
+    function showMessage() {
+      document.getElementById('surpriseMessage').style.display = 'block';
+    }
+
+    // Secret message only on click
+    function revealSecret() {
+      alert("P.S. I hope this little page makes you smile 💘");
+    }
+
+    // Optional: background music (gentle, auto-play on mute initially)
+    const audio = new Audio('https://www.bensound.com/bensound-music/bensound-love.mp3');
+    audio.loop = true;
+    audio.volume = 0.1;
+    setTimeout(() => {
+      audio.play().catch(() => {});
+    }, 1000);
+  </script>
+</body>
+</html>
